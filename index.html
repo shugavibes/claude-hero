@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude Code — Hero</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="hero" data-view="dev">
+
+    <!-- Shader background (right side) -->
+    <div class="hero__shader">
+      <canvas id="shaderCanvas"></canvas>
+    </div>
+
+    <!-- Gradient mask over shader -->
+    <div class="hero__gradient"></div>
+
+    <!-- Left panel -->
+    <div class="hero__panel">
+
+      <!-- Nav -->
+      <nav class="hero__nav">
+        <div class="hero__logo">
+          <img class="hero__logo--dark" src="logo-white.svg" alt="Claude" width="119" height="25">
+          <img class="hero__logo--light" src="logo-black.svg" alt="Claude" width="119" height="25">
+        </div>
+        <a href="#" class="hero__cta-nav">Try Claude</a>
+      </nav>
+
+      <!-- Title -->
+      <div class="hero__title">
+        <span class="hero__title-static">Claude Code for</span>
+        <span class="hero__title-dynamic">
+          <span class="hero__title-gt">&gt; </span><span class="hero__title-word">developers</span>
+        </span>
+      </div>
+
+      <!-- Content area (changes per view) -->
+      <div class="hero__content">
+
+        <!-- DEV content -->
+        <div class="hero__view hero__view--dev">
+          <div class="hero__terminal-box">
+            <div class="hero__terminal-header">
+              <span class="hero__terminal-line">───</span>
+              <span>Claude Code v2.1.34</span>
+              <span class="hero__terminal-line"> ─────────────────────</span>
+            </div>
+            <div class="hero__terminal-welcome">
+              <div class="hero__terminal-avatar">
+                <img src="claudecode-color.svg" alt="Claude Code" width="40" height="40">
+              </div>
+              <div class="hero__terminal-info">
+                <div>Welcome back!</div>
+                <div class="hero__terminal-meta">Opus 4.6 · Claude Pro ·</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero__prompt">
+            <span class="hero__prompt-divider">──────────────────────────────────────────────</span>
+            <span class="hero__prompt-text">&gt; Build an editable HTML shader loader for my platform. I need a full-screen animated background made of a flowing binary matrix pattern using only 1s and 0s. It should feel like data is being processed from a database: subtle, technical, fast but not chaotic, and suitable for a loading state.<span class="hero__cursor"></span></span>
+            <span class="hero__prompt-divider">──────────────────────────────────────────────</span>
+          </div>
+
+          <div class="hero__cta-bar hero__cta-bar--dev">
+            <span class="hero__cta-cmd"><span class="hero__cmd-highlight">curl -fsSL</span> https://claude.ai/install.sh<span class="hero__cmd-pipe">|bash</span></span>
+            <button class="hero__cta-btn hero__cta-btn--ghost">Get Claude Code <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="3" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.2"/><path d="M6 6h7v7H6" stroke="currentColor" stroke-width="1.2" rx="1"/></svg></button>
+          </div>
+        </div>
+
+        <!-- DESIGN content -->
+        <div class="hero__view hero__view--design" hidden>
+          <div class="hero__prose">
+            <p>I need two things for my coffee shop, Morning Ritual:</p>
+            <ol>
+              <li>Help me build my website. I want to design it like a cool new coffee shop for tech people on Marina Bay where they stat the day. Help me with the content and layout design.</li>
+              <li>I want too add on the website a nice animation with some shaders on the header that shows some coffee pouring. Use the Basement shaderLab tool for this</li>
+            </ol>
+            <p>Match my branding guidelines document I've uploaded. Follow the typography, colors, and spacing exactly. Create a Figma library with components of all the elements used on the designs. Use the Figma MCP.<span class="hero__cursor"></span></p>
+          </div>
+
+          <div class="hero__cta-bar hero__cta-bar--design">
+            <button class="hero__cta-btn hero__cta-btn--primary">Design with Claude Code <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+            <span class="hero__cta-cmd hero__cta-cmd--light">install claude plugin <span class="hero__cmd-highlight">figma</span></span>
+            <button class="hero__cta-copy"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="3" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.2"/><path d="M6 6h7v7H6" stroke="currentColor" stroke-width="1.2" rx="1"/></svg></button>
+          </div>
+        </div>
+
+        <!-- EVERYONE content -->
+        <div class="hero__view hero__view--everyone" hidden>
+          <div class="hero__prose">
+            <p>Create a little game for my son that explains what the Artemis 2 mission was. Help me build it as a simple, fun, interactive web game where he can learn about the crew, the rocket launch, the trip around the Moon, and the return to Earth. Make it feel playful, educational, and easy for a kid to understand.</p>
+            <p>I also want to add a nice space animation in the header, with stars, the Moon, and the Orion spacecraft moving around it.<span class="hero__cursor"></span></p>
+          </div>
+
+          <div class="hero__cta-bar hero__cta-bar--everyone">
+            <div class="hero__file-picker">
+              <span class="hero__file-tag">📁 Local</span>
+              <span class="hero__file-tag">📂 Select folder...</span>
+              <div class="hero__file-avatar">
+                <img src="claudecode-color.svg" alt="Claude Code" width="28" height="28">
+              </div>
+            </div>
+            <div class="hero__cta-row">
+              <button class="hero__cta-btn hero__cta-btn--primary">Download Claude for Desktop</button>
+              <button class="hero__cta-btn hero__cta-btn--secondary">For MacOS <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab bar -->
+      <div class="hero__tabs">
+        <div class="hero__tabs-inner">
+          <button class="hero__tab hero__tab--active" data-tab="dev">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 5L2 10l5 5M13 5l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Dev</span>
+          </button>
+          <button class="hero__tab" data-tab="design">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 2l6 6-10 10H2v-6L12 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            <span>Design</span>
+          </button>
+          <button class="hero__tab" data-tab="everyone">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M2 10h16M10 2c2.5 2.5 3.5 5 3.5 8s-1 5.5-3.5 8c-2.5-2.5-3.5-5-3.5-8s1-5.5 3.5-8z" stroke="currentColor" stroke-width="1.5"/></svg>
+            <span>Everyone</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
